@@ -1,0 +1,404 @@
+
+* {
+	box-sizing: border-box;
+	min-width: 0;
+	min-height: 0;
+}
+html {
+	font-family:
+		'Lucida Sans',
+		'Lucida Sans Regular',
+		'Lucida Grande',
+		'Lucida Sans Unicode',
+		Geneva,
+		Verdana,
+		sans-serif;
+}
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	width: 20%;
+}
+.boxposition {
+	display: flex;
+	justify-content: center;
+}
+.flexbox {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	flex: 0 1 auto;
+	overflow: hidden;
+	width: 100%;
+	max-width: 1200px;
+}
+/* > applies style to the child elements of type specified after it, but not their children */
+.flexbox > div {
+	border-left: 1px solid #000000;
+}
+.groups {
+	display: flex;
+	color: white;
+	font-size: 1rem;
+	font-weight: bold;
+	height: 50px;
+}
+.oxides {
+	display: flex;
+	font-size: 1rem;
+	font-weight: bold;
+	height: 50px;
+}
+.oxide-cell {
+	width: 8.7%;
+	background: #20dad8;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.oxide-first {
+	width: 13%;
+	background: #20dad8;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.oxide-cellx3 {
+	width: 26.1%;
+	background: #20dad8;
+	border-top: 1px solid #000000;
+}
+.oxide-text {
+	padding-left: 10px;
+}
+.oxide-last-text {
+	padding-top: 5px;
+	padding-left: 20px;
+}
+.table-row {
+	display: flex;
+}
+.large-first-group {
+	display: flex;
+	width: 13%;
+}
+.period-cell {
+	width: 8.7%;
+	background: #2f516d;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.group-cell {
+	width: 8.7%;
+	background: #2f516d;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.header-first {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 13%;
+	background: #2f516d;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.header-cellx3 {
+	width: 26.1%;
+	background: #2f516d;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-top: 1px solid #000000;
+}
+.header-end-text {
+	padding-left: 20px;
+}
+.first-cell {
+	width: 8.7%;
+	height: 100px;
+	background: #ff8151;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.period-number {
+	width: 4.3%;
+	height: 100px;
+	background: #ff8151;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid #000000;
+}
+.series {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 50%;
+	font-size: 1rem;
+}
+.series-group {
+	width: 66.6666%;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+	background: #ff8151;
+}
+.normal-cell {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 8.7%;
+	height: 100px;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.normal-centered {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 95%;
+	height: 95%;
+}
+.empty-cell {
+	width: 8.7%;
+	height: 150px;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.inner-cell {
+	height: 75px;
+}
+.inner-cell:first-child {
+	margin-left: 33%;
+}
+.inner-cell:last-child  {
+	margin-right: 33%;
+}
+/* Applies style to inner-cell's first child div in 2nd and 3rd occurence of larger-cell */
+.larger-cell:nth-child(2) .inner-cell:first-child,
+.larger-cell:nth-child(3) .inner-cell:first-child {
+	margin-right: 33%;
+	margin-left: 0px;
+}
+.larger-cell:nth-child(2) .inner-cell:last-child,
+.larger-cell:nth-child(3) .inner-cell:last-child {
+	margin-left: 33%;
+	margin-right: 0px;
+}
+.transition {
+	display: flex;
+	width: 26.1%;
+}
+.transition .larger-cell {
+	border-right: none;
+	width: 33%;
+}
+.element {
+	text-align: center;
+	font-weight: bold;
+	font-size: 2rem;
+}
+.element-number {
+	text-align: left;
+	padding-left: 5px;
+	font-size: 0.75rem;
+}
+.element-mass {
+	text-align: right;
+	padding-right: 5px;
+	font-size: 0.75rem;
+}
+.header-text {
+	padding-left: 10px;
+}
+.larger-cell {
+	width: 8.7%;
+	height: 150px;
+	border-right: 1px solid #000000;
+	border-top: 1px solid #000000;
+}
+.larger-number {
+	width: 33.3333%;
+	height: 150px;
+	background: #ff8151;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid #000000;
+}
+.larger-series {
+	height: 50%;
+}
+.odd-row {
+	background: #ffffce;
+}
+.table-row:nth-child(4) {
+	border-top: 1px solid #000000;
+}
+.table-row:nth-child(4) div {
+	border-top: none;
+}
+.even-row {
+	background: #fffaa1;
+}
+
+@media (max-width: 1200px) {
+	.groups {
+		font-size: 0.75rem;
+		height: 40px;
+	}
+	.oxides {
+		font-size: 0.75rem;
+		height: 40px;
+	}
+	.element {
+		font-size: 1.75rem;
+	}
+	.element-number {
+		padding-left: 5px;
+		font-size: 0.70rem;
+	}
+	.element-mass {
+		padding-right: 5px;
+		font-size: 0.70rem;
+	}
+	.period-number {
+		font-size: 0.75rem;
+		height: 80px;
+	}
+	.larger-cell {
+		height: 125px;
+	}
+	.larger-number {
+		height: 125px;
+	}
+	.first-cell {
+		height: 80px;
+	}
+	.normal-cell {
+		height: 80px;
+	}
+	.empty-cell {
+		height: 125px;
+	}
+	.inner-cell {
+		height: 60px;
+	}
+	.series {
+		font-size: 0.75rem;
+	}
+}
+@media (max-width: 768px) {
+	.groups {
+		font-size: 0.6rem;
+		height: 35px;
+	}
+	.oxides {
+		font-size: 0.6rem;
+		height: 35px;
+	}
+	.element {
+		font-size: 1rem;
+	}
+	.element-number {
+		padding-left: 5px;
+		font-size: 0.3rem;
+	}
+	.element-mass {
+		padding-right: 5px;
+		font-size: 0.3rem;
+	}
+	.period-number {
+		font-size: 0.6rem;
+		height: 50px;
+	}
+	.larger-cell {
+		height: 75px;
+	}
+	.larger-number {
+		height: 75px;
+	}
+	.first-cell {
+		height: 50px;
+	}
+	.normal-cell {
+		height: 50px;
+	}
+	.empty-cell {
+		height: 75px;
+	}
+	.inner-cell {
+		height: 35px;
+	}
+	.series {
+		font-size: 0.6rem;
+	}
+}
+@media (max-width: 420px) {
+	.groups {
+		font-size: 0.5rem;
+		height: 25px;
+	}
+	.oxides {
+		font-size: 0.5rem;
+		height: 25px;
+	}
+	.element {
+		font-size: 0.75rem;
+	}
+	.element-number {
+		padding-left: 5px;
+		font-size: 0.3rem;
+	}
+	.element-mass {
+		padding-right: 5px;
+		font-size: 0.3rem;
+	}
+	.period-number {
+		font-size: 0.5rem;
+		height: 50px;
+	}
+	.larger-cell {
+		height: 75px;
+	}
+	.larger-number {
+		height: 75px;
+	}
+	.first-cell {
+		height: 50px;
+	}
+	.normal-cell {
+		height: 50px;
+	}
+	.empty-cell {
+		height: 75px;
+	}
+	.inner-cell {
+		height: 35px;
+	}
+	.series {
+		font-size: 0.5rem;
+	}
+	.header-text {
+		padding-left: 5px;
+	}
+	.oxide-text {
+		padding-left: 5px;
+	}
+}
