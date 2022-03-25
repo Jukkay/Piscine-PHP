@@ -62,8 +62,23 @@ class Vector {
 		$dest = new Vertex(array('x' => $this->_x * $k, 'y' => $this->_y * $k, 'z' => $this->_z * $k));
 		return new Vector(array('dest' => $dest));
 	}
+	public function dotProduct($rhs) {
+		if (!($rhs instanceof Vector))
+			return;
+		return $this->_x * $rhs->_x + $this->_y * $rhs->_y + $this->_z * $rhs->_z;
+	}
+	public function cos($rhs) {
+		if (!($rhs instanceof Vector))
+			return;
+		return $this->dotProduct($rhs) / ($this->magnitude() * $rhs->magnitude());
+	}
+	public function crossProduct($rhs) {
+		if (!($rhs instanceof Vector))
+			return;
+		$dest = new Vertex(array('x' => ($this->_y * $rhs->_z) - ($this->_z * $rhs->_y), 'y' => ($this->_z * $rhs->_x) - ($this->_x * $rhs->_z), 'z' => ($this->_x * $rhs->_y) - ($this->_y * $rhs->_x)));
+		return new Vector(array('dest' => $dest));
+	}
 	public function __toString() {
-
 		return "Vector( x:" . number_format($this->_x, 2, ".", "") . ", y:" . number_format($this->_y, 2, ".", "") . ", z:"  . number_format($this->_z, 2, ".", "") . ", w:"  . number_format($this->_w, 2, ".", "") . " )";
 	}
 
