@@ -1,0 +1,34 @@
+<- Color ----------------------------------------------------------------------
+Class Color
+
+This class creates objects to handle RGB colors.
+
+Properties
+----------
+
+red, green, blue. These properties store RGB components as integers from 0 to 255.
+
+Color::$verbose. A static boolean variable to control output. If 'True', object's information is printed when object is constructed and destructed. Default is 'False'.
+
+Methods
+-------
+
+new Color( array( 'rgb' => value || 'red' => value, 'green' => value, 'blue' => value ) );
+
+New object is created from array given as argument. RGB value can be given in one integer on the value key 'rgb' (RRRGGGBBB). Alternatively RGB values can be given as separated components with keys 'red' 'green' and 'blue'.
+
+Color->add($object)
+
+This method adds the RGB values of the object given as argument to the RGB values of the current instance and returns a new object with the results. The values are limited to 255.
+
+Color->sub($object)
+
+This method subtracts the RGB values of the object given as argument from the RGB values of the current instance and returns a new object with the results. The values are limited to 0.
+
+Color->mult($float)
+
+This method multiplies the RGB values of the current instance with the value given as an argument and returns a new object with the results. The values are limited to 255.
+
+
+
+--------------------------------------------------------------------- Color ->

@@ -1,0 +1,33 @@
+<- Vertex ----------------------------------------------------------------------
+
+Class Vertex
+
+This class offers coordinate encapsulation and reading and modifying those coordinates.
+
+Properties
+----------
+
+'x' for x-axis coordinate. Mandatory.
+'y' for y-axis coordinate. Mandatory.
+'z' for z-axis coordinate. Mandatory.
+'w' for homogenous coordinate. Optional. Defaults to 1.0.
+'color' for instance of class Color. Optional. Defaults to white.
+
+Vertex::$verbose. A static boolean variable to control output. If 'True', object's information is printed when object is constructed and destructed, and color is included in __toString queries. Default is 'False'.
+
+Methods
+-------
+
+new Vertex( array( 'x' => $value_x, 'y' => $value_y,, 'z' => $value_z, 'w' => $value_w, 'color' => $instance_of_Color_class ))
+
+New object is created from array given as argument. Values for keys 'x' 'y' 'z' are mandatory and can be floats or integers. 'w' is optional and defaults to 1.0. Key 'color' is optional and takes in an instance of class Color as a value.
+
+$object->setValue(string $type, $value)
+
+Instance's values can be modified with setValue method. $type takes in the name of the property as string. $value is the value assigned to the property.
+
+$object->getValue(string $type)
+
+Returns the value for the property in the instance. $type takes in the name of the property as string. Method returns the queried value if $type is valid ('x' 'y' 'z' 'w' 'color')
+
+---------------------------------------------------------------------- Vertex ->
