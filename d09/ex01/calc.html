@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+
+	</style>
+	<script>
+		function useme() {
+			alert('Please, use me...');
+		}
+		function calc() {
+			const arg1 = parseInt(document.getElementById("arg1").value);
+			const op = document.getElementById("op").value;
+			const arg2 = parseInt(document.getElementById("arg2").value);
+
+			if (arg1 < 0 || arg2 < 0)
+				alert('Error :(');
+			switch (op) {
+				case '+':
+					console.log(arg1 + arg2);
+					break;
+				case '-':
+					console.log(arg1 - arg2);
+					break;
+				case '*':
+					console.log(arg1 * arg2);
+					break;
+				case '/':
+					if (arg2 == 0)
+						alert("It's over 9000!");
+					else
+						console.log(arg1 / arg2);
+					break;
+				case '%':
+					if (arg2 == 0)
+						alert("It's over 9000!");
+					else
+						console.log(arg1 % arg2);
+					break;
+			}
+		}
+		setInterval(useme, 30000);
+	</script>
+</head>
+<body>
+	<input type="text" id="arg1">
+	<select id="op">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+		<option value="%">%</option>
+	</select>
+	<input type="text" id="arg2">
+	<input type="button" id="btn" onclick="calc()" value="Try me!">
+</body>
+</html>

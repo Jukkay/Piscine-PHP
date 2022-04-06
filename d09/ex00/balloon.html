@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		#balloon {
+			position: fixed;
+  			top: 50%;
+  			left: 50%;
+  			transform: translate(-50%, -50%);
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+		}
+	</style>
+	<title>Balloon</title>
+</head>
+<body>
+	<div id="balloon" mouseout="mouseOff()"></div>
+	<script>
+		let balloon = document.getElementById("balloon");
+		let count = 0;
+
+		function grow() {
+			let h = balloon.style.height ? parseInt(balloon.style.height) : 200;
+			let w = balloon.style.width ? parseInt(balloon.style.width) : 200;
+			h += 10;
+			w += 10;
+			if (h > 420)
+				h = 200;
+			if (w > 420)
+				w = 200;
+			balloon.style.height = h + "px";
+			balloon.style.width = w + "px";
+		}
+		function shrink() {
+			let h = balloon.style.height ? parseInt(balloon.style.height) : 200;
+			let w = balloon.style.width ? parseInt(balloon.style.width) : 200;
+			h -= 5;
+			w -= 5;
+			if (h < 200)
+				h = 200;
+			if (w < 200)
+				w = 200;
+			balloon.style.height = h + "px";
+			balloon.style.width = w + "px";
+		}
+		function changeColor() {
+			switch (count++) {
+				case 0:
+					balloon.style.backgroundColor = 'green';
+					break;
+				case 1:
+					balloon.style.backgroundColor = 'blue';
+					break;
+				case 2:
+					balloon.style.backgroundColor = 'red';
+					count = 0;
+					break;
+			}
+		}
+		function reverseColor() {
+			switch (count--) {
+				case 0:
+					balloon.style.backgroundColor = 'blue';
+					count = 2;
+					break;
+				case 1:
+					balloon.style.backgroundColor = 'red';
+					break;
+				case 2:
+					balloon.style.backgroundColor = 'green';
+					break;
+			}
+		}
+		function onClick() {
+			grow();
+			changeColor();
+		}
+		function mouseOff() {
+			shrink();
+			reverseColor();
+		}
+		balloon.addEventListener("click", onClick);
+		balloon.addEventListener("mouseout", mouseOff);
+	</script>
+</body>
+</html>
