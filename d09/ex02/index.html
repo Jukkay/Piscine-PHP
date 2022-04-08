@@ -16,6 +16,9 @@
 							Verdana,
 							sans-serif;
 		}
+		input {
+			margin-right: 20px;
+		}
 		.wrapper {
 			display: flex;
 			justify-content: center;
@@ -36,13 +39,15 @@
 			padding: 5px 10px 5px 10px;
 			margin: 5px;
 		}
-		#ft_list div {
-			padding: 5px 10px 5px 10px;
-			margin: 5px;
+		.item-row {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding: 10px 10px 10px 10px;
 		}
 	</style>
 </head>
-<body>
+<body onload="readTaskList();">
 	<div class="wrapper">
 		<div class="container">
 			<div class="btnline">
