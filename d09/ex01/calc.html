@@ -16,32 +16,44 @@
 			const arg1 = parseInt(document.getElementById("arg1").value);
 			const op = document.getElementById("op").value;
 			const arg2 = parseInt(document.getElementById("arg2").value);
+			let msg;
+			let result;
 
 			if (arg1 < 0 || arg2 < 0)
 				alert('Error :(');
 			switch (op) {
 				case '+':
-					console.log(arg1 + arg2);
+					result = arg1 + arg2;
+					msg = result;
 					break;
 				case '-':
-					console.log(arg1 - arg2);
+					result = arg1 - arg2;
+					msg = result;
 					break;
 				case '*':
-					console.log(arg1 * arg2);
+					result = arg1 * arg2;
+					msg = result;
 					break;
 				case '/':
 					if (arg2 == 0)
-						alert("It's over 9000!");
-					else
-						console.log(arg1 / arg2);
+						msg = "It's over 9000!";
+					else {
+						result = arg1 / arg2;
+						msg = result;
+					}
 					break;
 				case '%':
 					if (arg2 == 0)
-						alert("It's over 9000!");
-					else
-						console.log(arg1 % arg2);
+						msg = "It's over 9000!";
+					else {
+						result = arg1 % arg2;
+						msg = result;
+					}
 					break;
 			}
+			if (result != undefined)
+				console.log(result);
+			alert(msg);
 		}
 		setInterval(useme, 30000);
 	</script>
